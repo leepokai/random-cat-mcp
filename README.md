@@ -9,42 +9,30 @@ This tool provides a simple MCP tool to generate cat images with capabilities to
 - Filter cat images by specific tags
 - Return image URLs
 
-## Installation
-
-Ensure you have Python 3.12 or higher installed, then run:
-
+## Sample configuration
 ```bash
-pip install -e .
-# or using uv
-uv pip install -e .
+{
+    "servers": {
+        "random-cat-mcp": {
+            "command": "uv",
+            "args": [
+                "--directory",
+                "D:/random-cat-mcp",
+                "run",
+                "src/random_cat_mcp.py"
+            ],
+            "env": {},
+            //"transportType":"stdio"
+        }
+    }
+}
 ```
-
-## Usage
-
-### Starting the Server
-
-```bash
-uv run src/random_cat_mcp.py
-```
-
-Or use the configured MCP server through VS Code.
 
 ### Using the MCP Tool
 
 This project defines the `random_cat_image` tool which accepts two parameters:
 - `addition_message`: Text to display on the cat image (maximum 10 characters)
 - `tag`: A list of tags for filtering cat image types
-
-### Example
-
-```python
-# MCP client usage example
-from mcp.clients import MCPClient
-
-client = MCPClient("random-cat-mcp")
-result = client.random_cat_image(addition_message="Hello", tag=["cute", "happy"])
-print(f"Cat image URL: {result}")
-```
 
 ## Available Tags
 
@@ -62,6 +50,3 @@ The tool supports numerous tags for filtering cat image types, such as "cute", "
 - requests >= 2.32.3
 - httpx >= 0.28.1
 
-## License
-
-[Add your license information here]
