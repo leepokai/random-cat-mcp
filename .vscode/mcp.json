@@ -1,0 +1,15 @@
+{
+    "servers": {
+        "random-cat-mcp": {
+            "command": "uv",
+            "args": [
+                "--directory",
+                "D:/random-cat-mcp",
+                "run",
+                "src/random_cat_mcp.py"
+            ],
+            "env": {},
+            //"transportType":"stdio"
+        }
+    }
+}
